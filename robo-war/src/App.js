@@ -5,6 +5,7 @@ function App() {
   return (
     <div className="App">
       <h1>this is changed</h1>
+      <p>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -18,6 +19,7 @@ function App() {
         >
           Learn React
         </a>
+      </p>
       </header>
     </div>
   );
