@@ -3,7 +3,9 @@ const dotenv = require('dotenv')
 const connectDB = require('./config/db.js');
 const userRouter = require('./routes/userRoutes.js');
 const { notFound, errorHandler } = require('./middleware/errorMiddleware.js');
+const cors = require('cors');
 
+app.use(cors());
 
 
 dotenv.config();
