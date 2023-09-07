@@ -4,7 +4,7 @@ const connectDB = require('./config/db.js');
 const userRouter = require('./routes/userRoutes.js');
 const { notFound, errorHandler } = require('./middleware/errorMiddleware.js');
 const cors = require('cors');
-
+const app = express();
 app.use(cors());
 
 
@@ -13,7 +13,7 @@ dotenv.config();
 connectDB();
 
 
-const app = express();
+
 app.use(express.json());
 
 app.use('/roboWar', userRouter);
