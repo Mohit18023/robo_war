@@ -1,37 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
-import './index.css';
-import Login from './LogIn.jsx';
-import Main from './Main.jsx';
-import { Text } from "@chakra-ui/react"
-import robo from "./robo.jpg"
-import Game from './Game.jsx'
-import lightgreenblue from "./lightgreenblue.png"
-import RobotFace from './RobotFace.jsx';
-import Playground from './Playground.jsx';
-import { BrowserRouter as Router, Route,Routes, Link } from 'react-router-dom';
+import React from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import AuthPage from "./pages/authPage";
+import "./App.css";
+import InfoProvider from "./context/infoProvider";
+import HomePage from "./pages/homePage";
+import GamePage from "./pages/gamePage";
+import { ChakraProvider } from "@chakra-ui/react";
 
-function App() {
+export default function App() {
   return (
     <div className="App">
-      <h1>this is changed</h1>
-    <p>this is paragraph</p>
-    <header className="App-header">
-    <img src={logo} className="App-logo" alt="logo" />
-    <p>
-    Edit <code>src/App.js</code> and save to reload.
-    </p>
-    <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-            Meenal
-            </a>
-            </header>
+      <BrowserRouter>
+      <ChakraProvider>
+
+        <InfoProvider>
+          <Routes>
+            <Route path="/" element={<AuthPage />} exact />
+            <Route path="/home" element={<HomePage />} />
+            <Route path="/game" element={<GamePage />} />
+          </Routes>
+        </InfoProvider>
+      </ChakraProvider>
+      </BrowserRouter>
     </div>
+    
   );
 }
-
-export default App;

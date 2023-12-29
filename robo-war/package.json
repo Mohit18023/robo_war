@@ -2,7 +2,6 @@
   "name": "robo-war",
   "version": "0.1.0",
   "private": true,
-  "proxy":"127.0.0.1:5000",
   "dependencies": {
     "@chakra-ui/icons": "^2.1.0",
     "@chakra-ui/react": "^2.8.0",
@@ -17,11 +16,13 @@
     "colors": "^1.4.0",
     "formik": "^2.4.3",
     "framer-motion": "^10.15.2",
+    "gsap": "^3.12.2",
     "os-browserify": "^0.3.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.15.0",
+    "react-router-dom": "^6.16.0",
     "react-scripts": "5.0.1",
+    "socket.io-client": "^4.7.2",
     "util": "^0.12.5",
     "web-vitals": "^2.1.4",
     "yup": "^1.2.0"

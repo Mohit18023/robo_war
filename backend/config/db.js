@@ -1,19 +1,18 @@
 const mongoose = require('mongoose');
-
-
-// need to add MONGO_URL in .env file
-const connectDB = async () => {
-    try {
-        const conn = await mongoose.connect(process.env.MONGO_URI,{
-            useNewUrlParser : true,
-            useUnifiedTopology : true,
-        });
-        console.log(`Successfuly connected to MongoDB: ${conn.connection.host}`);
-    } catch (error) {
-        console.log(`Error: ${error.message}`);
-        process.exit();
+const colors = require('colors');
+const dotenv = require('dotenv');
+const connectDB =async() =>{
+    try{
+        mongoose.connect(process.env.MONGO_URI,{
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+    }).then(con => {
+        console.log(`MongoDB Connected: ${con.connection.host}`.cyan.underline.bold);
+    })
+    }catch(error){
+        console.error(`Error: ${error.message}`.red.underline.bold);
+        process.exit(1);
     }
 }
-
 
 module.exports = connectDB;
